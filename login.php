@@ -22,6 +22,7 @@ if(isset($_GET['oauth_token']) && isset($_SESSION['secret'])) {
        
        $xml = simplexml_load_string($user_details);
        $_SESSION['osm_user'] = strval($xml->user['display_name']);
+       header('Location: index.php');
     } catch(OAuthException $E) {
         echo "<h3>EXCEPTION:</h3>\n";
         print_r($E);

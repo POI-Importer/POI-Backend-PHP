@@ -45,7 +45,7 @@ if($_POST['action']=='get_status'){
 }
 
 if($_POST['action']=='comment'){
-    if(!isset($_POST['feature']) || !isset($_POST['comment'] || !isset($_POST['status'])){
+    if(!isset($_POST['feature']) || !isset($_POST['comment']) || !isset($_POST['status'])){
         printError("No feature specified or no comment or status");
     }
     $stmt = $dbh->prepare("INSERT INTO content VALUES (':fid', ':time', ':username',':comment')");
